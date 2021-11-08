@@ -87,3 +87,15 @@ var msg = function () {
   return "hello world";
 };
 console.log(msg());
+
+// FUnction Overlaodin
+class Foo {
+  myMethod(a: string): void;
+  myMethod(a: number): void;
+  myMethod(a: number, b: string);
+  myMethod(a: any, b?: string): any {
+    console.log("function overloadig", a.toString());
+  }
+}
+const fooObj = new Foo();
+console.log(fooObj.myMethod(12));
