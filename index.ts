@@ -59,3 +59,31 @@ console.log("Global num: " + global_num);
 console.log(Numbers.sval); //static variable
 var numObj = new Numbers();
 console.log("Global num: " + numObj.num_val);
+
+// Example: Rest Parameters
+
+function addNumbers(...nums: number[]) {
+  var i;
+  var sum: number = 0;
+
+  for (i = 0; i < nums.length; i++) {
+    sum = sum + nums[i];
+  }
+  console.log("sum of the numbers", sum);
+}
+addNumbers(1, 2, 3);
+addNumbers(10, 10, 10, 10, 10);
+
+// Default Parameters
+function calculate_discount(price: number, rate: number = 0.5) {
+  var discount = price * rate;
+  console.log("Discount Amount: ", discount);
+}
+calculate_discount(1000);
+calculate_discount(1000, 0.3);
+
+// Anonymous Function
+var msg = function () {
+  return "hello world";
+};
+console.log(msg());
